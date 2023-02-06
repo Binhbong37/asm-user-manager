@@ -1,11 +1,17 @@
-import { FaUserAlt } from 'react-icons/fa';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
+import Users from './pages/Users';
+import User from './pages/User';
+import NotFound from './components/NotFound';
 function App() {
     return (
-        <div className="App">
-            <h1>New Project</h1>
-            <FaUserAlt />
-        </div>
+        <BrowserRouter>
+            <Routes>
+                <Route exact path="/" element={<Users />} />
+                <Route path="/:user" element={<User />} />
+                <Route path="*" element={<NotFound />} />
+            </Routes>
+        </BrowserRouter>
     );
 }
 
