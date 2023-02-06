@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
 import Users from './pages/Users';
 import User from './pages/User';
 import NotFound from './components/NotFound';
