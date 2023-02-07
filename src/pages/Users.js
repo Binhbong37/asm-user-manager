@@ -1,10 +1,10 @@
 import ListUsers from '../components/ListUsers';
 
-const Users = () => {
+const Users = ({ usersList }) => {
     return (
-        <div className="container">
-            <h2 className="center mb-3">List Users</h2>
-            <ListUsers />
+        <div className="container mt-5">
+            <h2 className="text-center">List Users</h2>
+            <ListUsers usersList={usersList} />
         </div>
     );
 };

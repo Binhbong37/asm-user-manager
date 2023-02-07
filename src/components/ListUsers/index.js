@@ -1,16 +1,8 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchUsers } from '../../redux/usersSlice';
-
 import Loading from '../Loading';
 import UserContainer from './UserContainer';
-const ListUsers = () => {
-    const dispatch = useDispatch();
-    const usersList = useSelector((state) => state.users);
+const ListUsers = ({ usersList }) => {
     const { isLoading, errMess, users } = usersList;
-    useEffect(() => {
-        dispatch(fetchUsers());
-    }, []);
+
     if (isLoading) {
         return <Loading center />;
     } else if (errMess !== null) {
@@ -22,13 +14,13 @@ const ListUsers = () => {
         );
     } else {
         return (
-            <table>
+            <table className="table table-hover">
                 <thead>
                     <tr>
                         <th>Avatar</th>
                         <th>Full Name</th>
-                        <th>Email</th>
                         <th>Username</th>
+                        <th>Email</th>
                         <th></th>
                     </tr>
                 </thead>
