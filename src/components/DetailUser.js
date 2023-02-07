@@ -3,13 +3,10 @@ import { Link } from 'react-router-dom';
 
 const DetailUser = ({ user }) => {
     const { title, first, last } = user.name;
+    const images = user.picture.large || user.picture.medium;
     return (
         <div className="card " style={{ width: '20rem' }}>
-            <img
-                className="card-img-top"
-                src={user.picture.large}
-                alt="CardImg"
-            />
+            <img className="card-img-top" src={images} alt="CardImg" />
             <div className="card-body">
                 <h5 className="card-title">
                     {title + ' ' + first + ' ' + last}
