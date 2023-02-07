@@ -11,7 +11,7 @@ const UserContainer = ({ user }) => {
             <td>{user.email}</td>
             <td>{user.login.username}</td>
             <td>
-                <button>Detail</button>
+                <button className="btn btn-warning">Detail</button>
             </td>
         </tr>
     );
