@@ -1,16 +1,10 @@
 import ListUsers from '../components/ListUsers';
-import PageNum from '../components/PageNum';
 
-const Users = ({ usersList }) => {
+const Users = ({ usersList, setPage, page }) => {
     return (
         <div className="container mt-5">
             <h2 className="text-center">List Users</h2>
-            <ListUsers usersList={usersList} />
-            {!usersList.isLoading && (
-                <div className="d-flex justify-content-end">
-                    <PageNum />
-                </div>
-            )}
+            <ListUsers usersList={usersList} setPage={setPage} page={page} />
         </div>
     );
 };

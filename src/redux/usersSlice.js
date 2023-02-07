@@ -30,8 +30,10 @@ export const usersSlice = createSlice({
     },
 });
 
-export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
-    const res = await fetch('https://randomuser.me/api/?page=1&results=10');
+export const fetchUsers = createAsyncThunk('users/fetchUsers', async (page) => {
+    const res = await fetch(
+        `https://randomuser.me/api/?page=${page}&results=10`
+    );
     const data = await res.json();
 
     return data.results;
