@@ -1,12 +1,17 @@
 import { useParams } from 'react-router-dom';
+import DetailUser from '../components/DetailUser';
 
 const User = ({ user }) => {
     let params = useParams();
+
     let filterUser = user.find((use) => use.login.username === params.user);
-    console.log(filterUser);
+
+    if (!filterUser) {
+        return <h1>User not found</h1>;
+    }
     return (
-        <div>
-            <h1>UserName: {params.user}</h1>
+        <div className="container">
+            <DetailUser user={filterUser} />
         </div>
     );
 };
