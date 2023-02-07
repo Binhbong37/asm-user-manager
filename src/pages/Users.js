@@ -1,16 +1,12 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchUsers } from '../components/usersSlice';
+import ListUsers from '../components/ListUsers';
 
 const Users = () => {
-    const dispatch = useDispatch();
-    const usersList = useSelector((state) => state.users);
-    console.log(usersList);
-    useEffect(() => {
-        dispatch(fetchUsers());
-    }, []);
-
-    return <div>Users</div>;
+    return (
+        <div className="container">
+            <h2 className="center mb-3">List Users</h2>
+            <ListUsers />
+        </div>
+    );
 };
 
 export default Users;
