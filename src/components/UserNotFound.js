@@ -1,15 +1,18 @@
 import React from 'react';
 
-const NotFound = () => {
+const UserNotFound = () => {
     return (
         <div
             className="container card shadow p-3 mt-5 bg-white rounded text-center"
             style={{ width: '30rem' }}
         >
             <div className="card-body">
-                <h5 className="card-title display-1 text-bold mb-3">404</h5>
-                <h6 className="card-subtitle mb-2">OOPS! PAGE NOT FOUD</h6>
-                <p className="card-text">Back to home and try again!!!</p>
+                <h5 className="card-title mb-3 text-danger ">
+                    USER NOT FOUND!
+                </h5>
+                <h6 className="card-subtitle mb-2 text-muted">
+                    Back to home and choose another user
+                </h6>
                 <a href="/" className="card-link">
                     Back to home
                 </a>
@@ -18,4 +21,4 @@ const NotFound = () => {
     );
 };
 
-export default NotFound;
+export default UserNotFound;

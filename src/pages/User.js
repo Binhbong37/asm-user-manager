@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import DetailUser from '../components/DetailUser';
+import UserNotFound from '../components/UserNotFound';
 
 const User = ({ user }) => {
     let params = useParams();
@@ -7,7 +8,7 @@ const User = ({ user }) => {
     let filterUser = user.find((use) => use.login.username === params.user);
 
     if (!filterUser) {
-        return <h1>User not found</h1>;
+        return <UserNotFound />;
     }
     return (
         <div className="container">
