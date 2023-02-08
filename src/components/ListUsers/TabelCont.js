@@ -65,10 +65,12 @@ const TabelCont = ({ users }) => {
     };
 
     return (
-        <table className="table table-hover">
-            <thead>
+        <table className="table table-hover align-middle mb-0 bg-white">
+            <thead
+                className="bg-secondary text-white"
+                style={{ fontSize: '1.25rem' }}
+            >
                 <tr>
-                    <th>Avatar</th>
                     <th>
                         Fullname
                         <span
@@ -112,7 +114,7 @@ const TabelCont = ({ users }) => {
                         </span>
                     </th>
                     <th>Email</th>
-                    <th></th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>

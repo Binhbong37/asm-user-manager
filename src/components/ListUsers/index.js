@@ -13,7 +13,7 @@ const ListUsers = ({ usersList, setPage, page }) => {
     } else {
         return (
             <>
-                <div>
+                <div className="shadow rounded-3 overflow-hidden mb-3">
                     <TabelCont users={users} />
                 </div>
                 <div className="d-flex justify-content-end">

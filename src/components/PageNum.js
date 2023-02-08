@@ -10,7 +10,7 @@ const PageNum = ({ setPage, page }) => {
     };
     return (
         <nav aria-label="Page navigation example">
-            <ul className="pagination pagination-lg">
+            <ul className="pagination">
                 {!isFirstPage && (
                     <li className="page-item" onClick={() => setPage(page - 1)}>
                         <span className="page-link">

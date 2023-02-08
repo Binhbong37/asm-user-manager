@@ -2,13 +2,22 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const UserContainer = ({ user }) => {
-    const { title, first, last } = user.name;
+    const { first, last } = user.name;
     return (
         <tr>
             <td>
-                <img src={user.picture.medium} alt="av" />
+                <div className="d-flex align-items-center">
+                    <img
+                        src={user.picture.medium}
+                        alt="av"
+                        style={{ width: '50px' }}
+                        className="rounded-circle"
+                    />
+                    <div className="ms-3">
+                        <p>{first + ' ' + last}</p>
+                    </div>
+                </div>
             </td>
-            <td>{title + ' ' + first + ' ' + last}</td>
             <td>{user.login.username}</td>
             <td>{user.email}</td>
             <td>
