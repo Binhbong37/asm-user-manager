@@ -13,7 +13,7 @@ body {
     border: 6px solid gray;
     border-radius: 50%;
     border-top-color: #43d8a2;
-    animation: spinner 1s linear infinite;
+    animation: spinner 2s linear infinite;
 }
 .loading-center {
     margin: 0 auto;

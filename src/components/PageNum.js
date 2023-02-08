@@ -1,24 +1,21 @@
 import { HiChevronDoubleLeft, HiChevronDoubleRight } from 'react-icons/hi';
-const PageNum = ({ setPage, page }) => {
-    const TOTAL_PAGE = Array.from(Array(10).keys());
 
-    const handlePage = (pages) => {
-        setPage(pages);
+const TOTAL_PAGE = Array.from(Array(10).keys());
+const PageNum = ({ setPage, page }) => {
+    const isFirstPage = page === 1;
+    const isLastPage = page === 10;
+
+    const handlePage = (p) => {
+        setPage(p);
     };
     return (
         <nav aria-label="Page navigation example">
             <ul className="pagination pagination-lg">
-                {!(page === 1) && (
-                    <li className="page-item" onClick={setPage(page - 1)}>
-                        <a
-                            className="page-link"
-                            href="/#"
-                            aria-label="Previous"
-                        >
-                            <span aria-hidden="true">
-                                <HiChevronDoubleLeft />
-                            </span>
-                        </a>
+                {!isFirstPage && (
+                    <li className="page-item" onClick={() => setPage(page - 1)}>
+                        <span className="page-link">
+                            <HiChevronDoubleLeft />
+                        </span>
                     </li>
                 )}
                 {TOTAL_PAGE.map((pag, index) => {
@@ -35,13 +32,11 @@ const PageNum = ({ setPage, page }) => {
                         </li>
                     );
                 })}
-                {!(page === 10) && (
-                    <li className="page-item" onClick={setPage(page + 1)}>
-                        <a className="page-link" href="/#" aria-label="Next">
-                            <span aria-hidden="true">
-                                <HiChevronDoubleRight />
-                            </span>
-                        </a>
+                {!isLastPage && (
+                    <li className="page-item" onClick={() => setPage(page + 1)}>
+                        <span className="page-link">
+                            <HiChevronDoubleRight />
+                        </span>
                     </li>
                 )}
             </ul>
