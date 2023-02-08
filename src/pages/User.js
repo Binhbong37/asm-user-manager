@@ -1,20 +1,19 @@
-import { useParams } from 'react-router-dom';
 import DetailUser from '../components/DetailUser';
-import UserNotFound from '../components/UserNotFound';
+import Loading from '../components/Loading';
+import DataNotFetch from '../components/DataNotFetch';
 
 const User = ({ user }) => {
-    let params = useParams();
-
-    let filterUser = user.find((use) => use.login.username === params.user);
-
-    if (!filterUser) {
-        return <UserNotFound />;
+    if (user.isLoading) {
+        return <Loading />;
+    } else if (user.errMess !== null) {
+        return <DataNotFetch />;
+    } else {
+        return (
+            <div className="container">
+                <DetailUser user={user.users} />
+            </div>
+        );
     }
-    return (
-        <div className="container">
-            <DetailUser user={filterUser} />
-        </div>
-    );
 };
 
 export default User;

@@ -29,7 +29,7 @@ function App() {
                 />
                 <Route
                     path="/users/:user"
-                    element={<User user={usersList.users} />}
+                    element={<User user={usersList} />}
                 />
                 <Route path="*" element={<NotFound />} />
             </Routes>
