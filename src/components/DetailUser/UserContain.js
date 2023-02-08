@@ -17,7 +17,7 @@ const UserContain = ({ user }) => {
                     </h5>
                 </div>
             </div>
-            <div className="card " style={{ width: '20rem' }}>
+            <div className="card ms-3" style={{ width: '20rem' }}>
                 <ul className="list-group list-group-flush">
                     <li className="list-group-item">Gender: {gender}</li>
                     <li className="list-group-item">
