@@ -1,6 +1,6 @@
 import Loading from '../Loading';
-import UserContainer from './UserContainer';
 import PageNum from '../PageNum';
+import TabelCont from './TabelCont';
 
 const ListUsers = ({ usersList, setPage, page }) => {
     const { isLoading, errMess, users } = usersList;
@@ -17,22 +17,9 @@ const ListUsers = ({ usersList, setPage, page }) => {
     } else {
         return (
             <>
-                <table className="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>Avatar</th>
-                            <th>Full Name</th>
-                            <th>Username</th>
-                            <th>Email</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {users.map((user, index) => {
-                            return <UserContainer key={index} user={user} />;
-                        })}
-                    </tbody>
-                </table>
+                <div>
+                    <TabelCont users={users} />
+                </div>
                 <div className="d-flex justify-content-end">
                     <PageNum setPage={setPage} page={page} />
                 </div>
