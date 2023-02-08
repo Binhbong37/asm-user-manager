@@ -70,7 +70,7 @@ const TabelCont = ({ users }) => {
                 <tr>
                     <th>Avatar</th>
                     <th>
-                        Full Name
+                        Fullname
                         <span
                             style={{ fontSize: '25px', cursor: 'pointer' }}
                             className="ms-2"

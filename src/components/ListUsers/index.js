@@ -1,3 +1,4 @@
+import DataNotFetch from '../DataNotFetch';
 import Loading from '../Loading';
 import PageNum from '../PageNum';
 import TabelCont from './TabelCont';
@@ -8,12 +9,7 @@ const ListUsers = ({ usersList, setPage, page }) => {
     if (isLoading) {
         return <Loading center />;
     } else if (errMess !== null) {
-        return (
-            <div>
-                <h3>Error!</h3>
-                <p>{usersList.errMess}</p>
-            </div>
-        );
+        return <DataNotFetch />;
     } else {
         return (
             <>
